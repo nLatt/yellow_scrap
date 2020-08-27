@@ -19,5 +19,10 @@ class BusinessSpider(scrapy.Spider):
                         "menu": business.css("a.menu::attr(href)").get()
                         } # link to website, coupons and then menus
                     },
-
+                "secondary-info": {
+                    "phone-number": business.css("div.phones::text").get(),
+                    "street-address": business.css("div.street-address::text").get(),
+                    "locality": business.css("div.locality::text").get()
                 }
+
+            }
