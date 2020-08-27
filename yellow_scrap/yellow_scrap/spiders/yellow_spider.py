@@ -1,9 +1,10 @@
 import scrapy
 
 class BusinessSpider(scrapy.Spider):
+    search_terms = input("Enter your search terms: ").replace(" ", "+")
     name = "businesses"
     start_urls = [
-        "https://www.yellowpages.com/search?search_terms=Bakeries&geo_location_terms=Los+Angeles%2C+CA",
+        "https://www.yellowpages.com/search?search_terms={}&geo_location_terms=Los+Angeles%2C+CA".format(search_terms),
     ]
 
     def parse(self, response):
