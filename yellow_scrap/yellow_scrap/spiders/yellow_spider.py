@@ -11,5 +11,5 @@ class BusinessSpider(scrapy.Spider):
             yield {
                 "name": business.css("a.business-name span::text").get(),
                 "categories" : business.css("div.categories a::text").getall(),
-                "ratings" : business.css("div.ratings div.result-rating::attr(class)").get().split(" ")[1]
+                # "ratings" : business.css("div.ratings div.result-rating::attr(class)").get().split(" ")[1]
             }
